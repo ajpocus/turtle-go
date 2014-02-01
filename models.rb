@@ -5,9 +5,10 @@ module Turtle
             @size = params[:size] || 19
             @komi = params[:komi] || 5.5
             @captures = {
-                :white => 0,
-                :black => 0
+                :w => 0,
+                :b => 0
             }
+            @grid = [[]]
         end
     end
     

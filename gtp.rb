@@ -22,7 +22,7 @@ module Turtle
             end
         end
 
-        def parse(command)
+        def run(command)
             # Clean out certain characters and comments
             command.gsub!(/\r/, '')
             command.gsub!(/\t/, ' ')
@@ -93,9 +93,10 @@ module Turtle
         end
         
         def play(color, vertex)
-            puts color, vertex
+            color = color[0]    # use a single-char representation
             pos_x = vertex[0].downcase!
-            pos_y = vertex.slice(1, vertex.length)
+            pos_y = vertex.slice(1, vertex.length) - 1
+            grid[pos_x][pos_y] = color
         end
     end
 

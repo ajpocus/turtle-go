@@ -7,7 +7,7 @@ board = Turtle::Board.new()
 gtp = Turtle::GTP.new()
 
 while command = gets() do
-    response = gtp.parse(command)
+    response = gtp.run(command)
     puts response
 end
 
