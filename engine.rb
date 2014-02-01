@@ -1,9 +1,13 @@
 #!/usr/bin/env ruby
 
 require_relative './gtp.rb'
+require_relative './models.rb'
 
-while gtp_command = gets() do
-    response = TurtleGTP.parse(gtp_command)
+board = Turtle::Board.new()
+gtp = Turtle::GTP.new()
+
+while command = gets() do
+    response = gtp.parse(command)
     puts response
 end
 
